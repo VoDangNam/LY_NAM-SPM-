@@ -138,6 +138,7 @@
     <Content Include="Search.aspx" />
     <Content Include="Setting.aspx" />
     <Content Include="ShoppingCart.aspx" />
+    <Content Include="SignUp.aspx" />
     <Content Include="Upload.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -202,8 +203,8 @@
     <Compile Include="MelodyDetails.aspx.designer.cs">
       <DependentUpon>MelodyDetails.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Models\KHACHHANG.cs" />
-    <Compile Include="Models\KHACHHANGDBCONTEXT.cs" />
+    <Compile Include="Models\KhachHang.cs" />
+    <Compile Include="Models\KhachHangDbContext.cs" />
     <Compile Include="Notification.aspx.cs">
       <DependentUpon>Notification.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -267,6 +268,13 @@
     </Compile>
     <Compile Include="ShoppingCart.aspx.designer.cs">
       <DependentUpon>ShoppingCart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SignUp.aspx.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SignUp.aspx.designer.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
     </Compile>
     <Compile Include="Upload.aspx.cs">
       <DependentUpon>Upload.aspx</DependentUpon>

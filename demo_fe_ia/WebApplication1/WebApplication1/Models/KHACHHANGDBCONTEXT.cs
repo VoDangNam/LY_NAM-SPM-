@@ -8,10 +8,10 @@ using System.Data.Entity;
 
 namespace WebApplication1.Models
 {
-    public class KHACHHANGDBCONTEXT:DbContext
+    public class KhachHangDbContext : DbContext
     {
-        public KHACHHANGDBCONTEXT() : base("name=KHACHHANGCONNECTION") { }
+        public KhachHangDbContext() : base("name=KhachHangDbContext") { }
 
-        public DbSet<KHACHHANG> KHACHHANGs { get; set; }
+        public DbSet<KhachHang> KHACHHANGs { get; set; }
     }
 }

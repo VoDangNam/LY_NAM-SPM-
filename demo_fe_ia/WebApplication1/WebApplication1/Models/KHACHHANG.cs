@@ -7,10 +7,10 @@ using System.Xml.Linq;
 
 namespace WebApplication1.Models
 {
-    public class KHACHHANG
+    public class KhachHang
     {
         [Key]
-        public int IdKHACHHANG { get; set; }
+        public int IDKHACHHANG { get; set; }
 
         [Display(Name = "Tên Đăng Nhập")]
         public string TENDANGNHAP { get; set; }
