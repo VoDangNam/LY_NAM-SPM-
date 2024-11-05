@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Menu.Master" AutoEventWireup="true" CodeBehind="Profile.aspx.cs"
     Inherits="WebApplication1.Profile" %>
+
     <asp:Content ID="Content1" ContentPlaceHolderID="content" runat="server">
         <link href="css/css_profile.css" rel="stylesheet" />
 
@@ -89,12 +90,12 @@
                                 <asp:DataList ID="DSBAIDANG" runat="server">
                                     <ItemTemplate>
                                         <!-- row tổng -->
-                                        <div class="row">
+                                        <div class="row mb-5">
                                             <div class="col-lg-12">
                                                 <div class="cardTong card">
                                                     <div class="card-body">
                                                         <!-- row của card trong -->
-                                                        <div class="row">
+                                                        <div class="row m-0">
                                                             <div class="col-lg-12">
                                                                 <div class="subCard card">
                                                                     <!-- row của nội dung card trong -->
@@ -108,23 +109,103 @@
                                                                             <!-- width="400px" Height="300px" -->
                                                                         </div>
                                                                         <div class="col-lg-7">
-                                                                            <div class="contentCard card">
+                                                                            <div class="contentCard card p-2">
                                                                                 <div
-                                                                                    class="card-header d-flex justify-content-between">
+                                                                                    class="card-header d-flex align-items-center">
                                                                                     <asp:Label ID="Label3"
                                                                                         runat="server"
-                                                                                        Text='<%# Eval("TIEUDE") %>'>
+                                                                                        Text='<%# Eval("TIEUDE") %>'
+                                                                                        CssClass="tieuDe">
                                                                                     </asp:Label>
-                                                                                    <!-- thiếu đổ dữ liệu icon thể loại -->
-                                                                                    <div class="">
-                                                                                        <i
-                                                                                            class="fa-regular fa-image"></i>
-                                                                                    </div>
                                                                                 </div>
                                                                                 <div class="card-body">
+                                                                                    <div class="row mb-3">
+                                                                                        <div class="col-lg-12">
+                                                                                            <asp:Label ID="Label2"
+                                                                                                runat="server"
+                                                                                                Text='<%# Eval("THOIGIAN") %>'>
+                                                                                            </asp:Label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="row">
+                                                                                        <div class="col-lg-12">
+                                                                                            <asp:Label ID="Label4"
+                                                                                                runat="server"
+                                                                                                Text='<%# Eval("MOTA") %>'>
+                                                                                            </asp:Label>
+                                                                                        </div>
+                                                                                    </div>
 
+                                                                                    <div class="row m-0">
+                                                                                        <div
+                                                                                            class="col-lg-12 d-flex align-items-center justify-content-between">
+                                                                                            <div
+                                                                                                class="d-flex align-items-center">
+                                                                                                <div class="avaBorder">
+                                                                                                    <asp:ImageButton
+                                                                                                        ID="ImageButton1"
+                                                                                                        runat="server"
+                                                                                                        CommandArgument='<%# Eval("IDBAIDANG") %>'
+                                                                                                        ImageUrl='<%# "images/post_image/"+Eval("AVATARTACGIA") %>'
+                                                                                                        CssClass="ava" />
+                                                                                                </div>
+                                                                                                <div class="ps-3">
+                                                                                                    <asp:Label
+                                                                                                        ID="Label1"
+                                                                                                        runat="server"
+                                                                                                        Text='<%# Eval("TENTACGIA") %>'
+                                                                                                        CssClass="tenTacGia">
+                                                                                                    </asp:Label>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="">
+                                                                                                <asp:Button ID="Button5"
+                                                                                                    runat="server"
+                                                                                                    Text="Button"
+                                                                                                    CssClass="followButton" />
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div
+                                                                                    class="card-footer d-flex justify-content-between">
+                                                                                    <!-- button heart -->
+                                                                                    <button id="likeButton"
+                                                                                        type="button"
+                                                                                        onclick="toggleColor()">
+                                                                                        <i
+                                                                                            class="fa-solid fa-heart"></i>
+                                                                                    </button>
+                                                                                    <!-- button comment -->
+                                                                                    <button type="button">
+                                                                                        <i
+                                                                                            class="fa-regular fa-comment"></i>
+
+                                                                                    </button>
+                                                                                    <!-- button dropdown -->
+                                                                                    <button class="drop" type="button"
+                                                                                        data-bs-toggle="dropdown"
+                                                                                        aria-expanded="false">
+                                                                                        <i
+                                                                                            class="fa-solid fa-ellipsis"></i>
+                                                                                    </button>
+                                                                                    <ul class="dropdown-menu p-0">
+                                                                                        <li>
+                                                                                            <asp:Button ID="Button3"
+                                                                                                runat="server"
+                                                                                                Text="Delete post"
+                                                                                                CssClass="dropButton" />
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <asp:Button ID="Button4"
+                                                                                                runat="server"
+                                                                                                Text="Save to collection"
+                                                                                                CssClass="dropButton" />
+                                                                                        </li>
+                                                                                    </ul>
                                                                                 </div>
                                                                             </div>
+
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -132,44 +213,56 @@
                                                         </div>
                                                     </div>
                                                     <div class="card-footer">
+                                                        <div class="row mt-2 mb-2">
+                                                            <div
+                                                                class="col-lg-12 d-flex align-items-center justify-content-between">
+                                                                <div class="me-2">
+                                                                    <div class="avaBorder">
+                                                                        <asp:ImageButton ID="ImageButton3"
+                                                                            runat="server" ImageUrl="images/avatar.jpg"
+                                                                            CssClass="ava" />
+                                                                    </div>
+                                                                </div>
 
+                                                                <div class="boxComment input-group">
+                                                                    <asp:TextBox ID="TextBox1" runat="server"
+                                                                        CssClass="form-control"
+                                                                        placeholder="Write a comment">
+                                                                    </asp:TextBox>
+
+                                                                    <asp:Button ID="Button6" runat="server"
+                                                                        Text="Button" CssClass="hi" />
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
+
                                             </div>
                                         </div>
-                                        <asp:ImageButton ID="ImageButton1" runat="server"
-                                            CommandArgument='<%# Eval("IDBAIDANG") %>'
-                                            ImageUrl='<%# "post_image/"+Eval("AVATARTACGIA") %>' width="50px"
-                                            Height="50px" />
-                                        <asp:Label ID="Label1" runat="server" Text='<%# Eval("TENTACGIA") %>'>
-                                        </asp:Label>
-                                        <asp:Label ID="Label2" runat="server" Text='<%# Eval("THOIGIAN") %>'>
-                                        </asp:Label>
-
-                                        <br />
-                                        <asp:Label ID="Label4" runat="server" Text='<%# Eval("MOTA") %>'>
-                                        </asp:Label>
-                                        <br />
-                                        <!-- đổ thêm avata của người dùng(acc đa đăng nhập) -->
-                                    </ItemTemplate>
-                                </asp:DataList>
-
-
                             </div>
+                            <!-- đổ thêm avata của người dùng(acc đa đăng nhập) -->
+                            </ItemTemplate>
+                            </asp:DataList>
+
 
                         </div>
 
                     </div>
+
                 </div>
             </div>
 
+        </div>
 
 
 
 
-            <div id="content2" class="menu-content" style="display:none;">
-                <%--datalist--%>
-            </div>
+
+        <div id="content2" class="menu-content" style="display:none;">
+
+
             <div id="content3" class="menu-content" style="display:none;">
                 <%--datalist--%>
             </div>
@@ -179,124 +272,17 @@
             </div>
 
         </div>
+        </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-            crossorigin="anonymous"></script>
+
+
+
+
+
+
 
         <script src="js/js_profile.js"></script>
 
 
+
     </asp:Content>
-
-
-
-
-    <%--<div class="card">
-        <!-- card-body -->
-        <div class="card-body">
-            <div class="row m-0">
-                <div class="col-lg-12">
-                    <div class="cnt card">
-                        <div class="row w-100">
-                            <div class="col-lg-5">
-                                <asp:ImageButton ID="ImageButton1" runat="server" CssClass="img_post"
-                                    AlternateText="Post Image" Width="708px" />
-
-                            </div>
-                            <div class="ctn-post col-lg-7">
-                                <div class="card">
-                                    <div class="card-header d-flex justify-content-between align-items-center">
-                                        <asp:Label ID="Label2" runat="server" Text='<%# Eval("TENBAIVIET") %>'
-                                            CssClass="title_post"></asp:Label>
-                                        <i class="fa-regular fa-image"></i>
-                                    </div>
-                                    <div class="card-body">
-                                        <asp:Label ID="Label3" runat="server" Text="Label tdgjuhkjhgcxerydtfuygi">
-                                        </asp:Label>
-                                    </div>
-                                    <div class="card-footer d-flex justify-content-between align-items-center">
-
-                                        <button type="button">
-                                            <i class="items-heart fa-regular fa-heart"></i>
-                                        </button>
-                                        <button type="button">
-                                            <i class="items-comment fa-regular fa-comment"></i>
-                                        </button>
-                                        <button type="button">
-                                            <i class="items-navi fa-solid fa-ellipsis"></i>
-                                        </button>
-
-
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <div class="card-footer">
-
-        </div>
-        </div>--%>
-
-        <%-- <div class="pt card p-3">
-            <div class="card-body p-0">
-                <div class="row m-0">
-                    <div class="col-lg-12">
-                        <div class="cnt card">
-                            <div class="row w-100">
-                                <div class="col-lg-5">
-                                    <asp:ImageButton ID="ImageButton1" runat="server" CssClass="img_post"
-                                        ImageUrl="images/img-home/3.jpg" AlternateText="Post Image" />
-
-                                </div>
-                                <div class="ctn-post col-lg-7">
-                                    <div class="card">
-                                        <div class="card-header d-flex justify-content-between align-items-center">
-                                            <asp:Label ID="Label2" runat="server" Text="tiêu đề" CssClass="title_post">
-                                            </asp:Label>
-                                            <i class="fa-regular fa-image"></i>
-                                        </div>
-                                        <div class="card-body">
-                                            <asp:Label ID="Label3" runat="server" Text="Label tdgjuhkjhgcxerydtfuygi">
-                                            </asp:Label>
-                                        </div>
-                                        <div class="card-footer d-flex justify-content-between align-items-center">
-
-                                            <button type="button">
-                                                <i class="items-heart fa-regular fa-heart"></i>
-                                            </button>
-                                            <button type="button">
-                                                <i class="items-comment fa-regular fa-comment"></i>
-                                            </button>
-                                            <button type="button">
-                                                <i class="items-navi fa-solid fa-ellipsis"></i>
-                                            </button>
-
-
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="card-footer d-flex justify-content-center align-content-center">
-                <div class="cmt w-100 d-flex justify-content-center">
-
-                    <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="images/img-home/3.jpg"
-                        CssClass="imageAvaComment" />
-
-                    <asp:TextBox ID="TextBox1" runat="server" CssClass="Comment"></asp:TextBox>
-                </div>
-            </div>
-            </div> --%>

@@ -177,81 +177,115 @@
     border: none;
     border-radius: 15px;
     box-shadow: 0 5px 10px #6305D3;
+    overflow: hidden;
+
+    /*overflow: hidden; => Để phần tử con tuân theo hình dạng của phần tử cha */
 }
 
-#content1 .post .subCard .colImgPost {}
+#content1 .post .subCard .colImgPost {
+    max-height: 400px;
+    min-height: 300px;
+}
 
 #content1 .post .subCard .colImgPost .anhBaiDang {
     width: 100%;
+    height: 100%;
+
+    /* object-fit: cover; => xử lý tràn viền */
 }
 
-/* .post .pt {
-    border-radius: 15px;
+#content1 .post .subCard .contentCard {
     border: none;
-    background-color: #E3D2F7;
-    overflow: hidden;
-
-}
-
-.post .card .cnt {
-    max-height: 350px;
-    overflow: hidden;
-    background-color: #fff;
-    border-radius: 15px;
-    border: none;
-}
-
-.post .img_post {
     width: 100%;
-    height: 350px;
-    max-height: 100%;
-    object-fit: cover;
+    height: 100%;
+    min-height: 300px;
+    overflow: hidden;
 }
 
-.ctn-post .fa-image {
-    font-size: 28px;
-    color: #6305D3;
-}
-
-.ctn-post .card {
-    height: auto;
-    padding: 10px;
+#content1 .post .subCard .contentCard .card-header {
     border: none;
-    border-radius: 15px;
+    background-color: #fff;
+    height: 15%;
 }
 
-
-.ctn-post .title_post {
-    font-size: 24px;
-    font-weight: 800;
+#content1 .post .subCard .contentCard .card-header .tieuDe {
+    font-size: 28px;
+    font-weight: 700;
     color: #2B005F;
 }
 
-.ctn-post button {
-    width: 50px;
-    height: 35px;
+#content1 .post .subCard .contentCard .card-body {
     border: none;
+    background-color: #fff;
+    height: 70%;
+}
+
+#content1 .post .subCard .contentCard .card-footer {
+    border-top: 2px solid #2B005F;
+    background-color: #fff;
+    height: 50px;
+}
+
+#content1 .post .subCard .contentCard .card-footer button {
+    width: 30%;
+    background-color: #fff;
+    border: none;
+}
+
+#content1 .post .subCard .contentCard .card-footer button i {
+    font-size: 28px;
+}
+
+#likeButton i {
+    color: #cea3fe;
+}
+
+#likeButton.active i {
+    color: rgb(210, 23, 23);
+}
+
+#content1 .post .subCard .contentCard .card-footer ul {
+    overflow: hidden;
+}
+
+#content1 .post .subCard .contentCard .card-footer .dropButton {
+    width: 100%;
+    border: none;
+    padding: 5px;
     background-color: #fff;
 }
 
-.ctn-post i {
-    font-size: 35px;
-
+#content1 .post .subCard .contentCard .card-footer .dropButton:hover {
+    background-color: #e8dff3;
 }
 
-.ctn-post .items-heart::after {
-    color: #6305D3;
-    background-color: #6305D3;
-}
-
-.card-footer .imageAvaComment {
-    width: 50px;
-    height: 50px;
+#content1 .post .cardTong .avaBorder {
     border-radius: 50%;
-    border: 2px solid #6305D3;
-    margin-right: 15px;
+    border: 3px solid #6305D3;
+    width: 55px;
+    height: 55px;
+    overflow: hidden;
 }
 
-.card-footer .comment {
-    width: 80%;
-} */
+#content1 .post .cardTong .ava {
+    width: 100%;
+    height: 100%;
+}
+
+#content1 .post .subCard .contentCard .tenTacGia {
+    font-size: 21px;
+    font-weight: 700;
+}
+
+#content1 .post .subCard .contentCard .followButton {
+    background-color: #fff;
+    border: 3px solid #6305D3;
+    border-radius: 10px;
+    padding: 5px 20px;
+    color: #6305D3;
+    font-weight: 700;
+}
+
+#content1 .post .cardTong .card-footer .boxComment {
+    width: 90%;
+}

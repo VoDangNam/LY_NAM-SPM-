@@ -101,11 +101,14 @@
     <Content Include="css\css_menu.css" />
     <Content Include="css\css_photos.css" />
     <Content Include="css\css_profile.css" />
+    <Content Include="css\css_signUp.css" />
     <Content Include="ExhibitionCorner.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Help.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="images\avatar.jpg" />
+    <Content Include="images\GoogleLogo.png" />
+    <Content Include="images\imgLoginPage.png" />
     <Content Include="images\img_home\1.jpg" />
     <Content Include="images\img_home\2.jpg" />
     <Content Include="images\img_home\3.jpg" />

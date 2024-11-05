@@ -18,3 +18,13 @@ function showContent(contentId, button) {
     // Thêm lớp 'active-btn' vào nút được nhấn
     button.classList.add('active-btn');
 }
+
+//đổi màu icon heart sau khi bấm
+function toggleColor() {
+    const button = document.getElementById("likeButton");
+    button.classList.toggle("active");
+}
+
+
+
+

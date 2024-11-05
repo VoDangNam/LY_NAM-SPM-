@@ -37,7 +37,7 @@ namespace WebApplication1
             else
             {
                 // Đăng nhập thất bại
-                lblMessage.Text = "Tên đăng nhập hoặc mật khẩu không đúng!";
+                lblMessage.Text = "Username or password is incorrect!";
             }
 
         }
@@ -50,6 +50,7 @@ namespace WebApplication1
 
             return dt != null && dt.Rows.Count > 0;
         }
+
 
     }
 }

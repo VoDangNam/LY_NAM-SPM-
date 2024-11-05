@@ -1,17 +1,5 @@
 ﻿document.addEventListener('DOMContentLoaded', function () {
     let wrapper = document.querySelector('.wrapper');
-    let signuplink = document.querySelector('.signup-link');
-    let loginlink = document.querySelector('.login-link');
-
-    signuplink.onclick = () => {
-        wrapper.classList.add("active");
-        animateContainer();
-    };
-
-    loginlink.onclick = () => {
-        wrapper.classList.remove("active");
-        animateContainer();
-    };
 
     let container = document.getElementById('container');
     let borderArray = ['50%', '0'];
@@ -20,7 +8,7 @@
     let width = window.innerWidth;
     let height = window.innerHeight;
     let count = 30;
-    
+
 
     function createElementRandom() {
         for (var i = 0; i < count; i++) {

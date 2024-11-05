@@ -11,6 +11,7 @@ namespace WebApplication1
     public partial class Profile : System.Web.UI.Page
     {
         LopKetNoi kn = new LopKetNoi();
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             if (IsPostBack) return;
@@ -19,6 +20,8 @@ namespace WebApplication1
             DSBAIDANG.DataBind();
 
         }
+       
+
 
         protected void DataList1_SelectedIndexChanged(object sender, EventArgs e)
         {
