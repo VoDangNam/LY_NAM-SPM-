@@ -15,12 +15,16 @@ namespace WebApplication1
         protected void Page_Load(object sender, EventArgs e)
         {
             if (IsPostBack) return;
-            String SQL = "Select * from BAIDANG";
+            String SQL = "Select * from BAIDANG,KHACHHANG";
             DSBAIDANG.DataSource = kn.LayDuLieu(SQL);
             DSBAIDANG.DataBind();
+            DS_FOLLOWING.DataSource = kn.LayDuLieu(SQL);
+            DS_FOLLOWING.DataBind();
+            DS_FOLLOWER.DataSource = kn.LayDuLieu(SQL);
+            DS_FOLLOWER.DataBind();
 
         }
-       
+
 
 
         protected void DataList1_SelectedIndexChanged(object sender, EventArgs e)
@@ -29,6 +33,16 @@ namespace WebApplication1
         }
 
         protected void DataList1_SelectedIndexChanged1(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
+        {
+
+        }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
         {
 
         }

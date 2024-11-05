@@ -259,13 +259,40 @@
 
 
 
+ <div id="content2" class="menu-content" style="display:none;">
+     <%--datalist--%>
+     <asp:DataList ID="DS_FOLLOWING" runat="server" RepeatColumns="2">
+                         <ItemTemplate>
+                             <asp:Image ID="Image3" runat="server" AlternateText='<%# Eval("IDKHACHHANG") %>' ImageUrl='<%# "AVT_DAIDIEN/"+Eval("AVTDAIDIEN") %>' Height="200px" />
+                             &nbsp;<asp:LinkButton ID="LinkButton1" runat="server" CommandArgument='<%# Eval("IDKHACHHANG") %>' OnClick="LinkButton1_Click" Text='<%# Eval("TENDANGNHAP") %>'></asp:LinkButton>
+                             <br />
+                             <asp:Label ID="lbnumberflw" runat="server" Text='<%# Eval("SLFL") %>'></asp:Label>
+                             <br />
+                             <asp:Button ID="btnchatting" runat="server" Text="Chatting" />
+                             &nbsp;
+                             <asp:Button ID="btnfollowing" runat="server" Text="Following" />
+                         </ItemTemplate>
+             </asp:DataList>
+ </div>
 
-        <div id="content2" class="menu-content" style="display:none;">
-
-
-            <div id="content3" class="menu-content" style="display:none;">
-                <%--datalist--%>
-            </div>
+  <div id="content3" class="menu-content" style="display:none;">
+      <%--datalist--%>
+         <asp:DataList ID="DS_FOLLOWER" runat="server" RepeatColumns="2">
+                <ItemTemplate>
+                    <asp:Image ID="Image3" runat="server" AlternateText='<%# Eval("IDKHACHHANG") %>' ImageUrl='<%# "AVT_DAIDIEN/"+Eval("AVTDAIDIEN") %>' Height="200px" />
+                    &nbsp;<asp:LinkButton ID="LinkButton1" runat="server" CommandArgument='<%# Eval("IDKHACHHANG") %>' OnClick="LinkButton1_Click" Text='<%# Eval("TENDANGNHAP") %>'></asp:LinkButton>
+                    <br />
+                    <asp:Label ID="lbnumberflw" runat="server" Text='<%# Eval("SLFL") %>'></asp:Label>
+                    <br />
+                    <asp:Button ID="btnchatting" runat="server" Text="Chatting" />
+                    &nbsp;
+                    <asp:Button ID="btnfollowing" runat="server" Text="Following" />
+                </ItemTemplate>
+    </asp:DataList>
+  </div>
+        
+  <br />
+  <br />
             <div id="content4" class="menu-content" style="display:none;">
                 <h3>Nội dung Submenu 4</h3>
                 <p>Đây là nội dung cho Submenu 4.</p>
