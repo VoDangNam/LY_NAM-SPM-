@@ -75,7 +75,7 @@ namespace WebApplication1
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList DS_FOLLOWING;
+        protected global::System.Web.UI.WebControls.Repeater DS_FOLLOWING;
 
         /// <summary>
         /// DS_FOLLOWER control.
@@ -84,6 +84,6 @@ namespace WebApplication1
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList DS_FOLLOWER;
+        protected global::System.Web.UI.WebControls.Repeater DS_FOLLOWER;
     }
 }

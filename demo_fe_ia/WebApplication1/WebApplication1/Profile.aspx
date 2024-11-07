@@ -10,7 +10,7 @@
                     <div class="ava card">
                         <div class="avatar d-flex flex-column">
                             <%--ảnh bìa đổ dữ liệu--%>
-                                <asp:Image ID="Image2" runat="server" ImageUrl="images/img-home/1.jpg"
+                                <asp:Image ID="Image2" runat="server" ImageUrl="images/img_home/1.jpg"
                                     CssClass="coverPhoto" />
 
                                 <div class="row mb-3">
@@ -62,9 +62,10 @@
                 </div>
             </div>
             <!-- Nội dung của từng menu phụ -->
+            <!-- post -->
             <div id="content1" class="menu-content" style="display:block;">
                 <div class="row d-flex justify-content-between">
-                    <!-- introduce -->
+                    <!--col introduce -->
                     <div class="intro col-lg-3">
                         <div class="card">
                             <div class="card-header d-flex justify-content-center p-3">
@@ -81,13 +82,12 @@
                         </div>
                     </div>
 
-                    <!-- post -->
+                    <!--col post -->
                     <div class="post col-lg-8">
                         <div class="row">
                             <div class="col-lg-12">
                                 <!-- datalist -->
-
-                                <asp:DataList ID="DSBAIDANG" runat="server">
+                                <asp:DataList ID="DSBAIDANG" runat="server" ClientIDMode="AutoID">
                                     <ItemTemplate>
                                         <!-- row tổng -->
                                         <div class="row mb-5">
@@ -118,7 +118,8 @@
                                                                                         CssClass="tieuDe">
                                                                                     </asp:Label>
                                                                                 </div>
-                                                                                <div class="card-body">
+                                                                                <div
+                                                                                    class="card-body d-flex flex-column">
                                                                                     <div class="row mb-3">
                                                                                         <div class="col-lg-12">
                                                                                             <asp:Label ID="Label2"
@@ -127,7 +128,7 @@
                                                                                             </asp:Label>
                                                                                         </div>
                                                                                     </div>
-                                                                                    <div class="row">
+                                                                                    <div class="row m-0">
                                                                                         <div class="col-lg-12">
                                                                                             <asp:Label ID="Label4"
                                                                                                 runat="server"
@@ -136,7 +137,7 @@
                                                                                         </div>
                                                                                     </div>
 
-                                                                                    <div class="row m-0">
+                                                                                    <div class="row m-0 mt-auto">
                                                                                         <div
                                                                                             class="col-lg-12 d-flex align-items-center justify-content-between">
                                                                                             <div
@@ -158,6 +159,7 @@
                                                                                                     </asp:Label>
                                                                                                 </div>
                                                                                             </div>
+
                                                                                             <div class="">
                                                                                                 <asp:Button ID="Button5"
                                                                                                     runat="server"
@@ -205,7 +207,6 @@
                                                                                     </ul>
                                                                                 </div>
                                                                             </div>
-
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -226,13 +227,12 @@
 
                                                                 <div class="boxComment input-group">
                                                                     <asp:TextBox ID="TextBox1" runat="server"
-                                                                        CssClass="form-control"
+                                                                        CssClass="inputBox form-control"
                                                                         placeholder="Write a comment">
                                                                     </asp:TextBox>
-
-                                                                    <asp:Button ID="Button6" runat="server"
-                                                                        Text="Button" CssClass="hi" />
-
+                                                                    <button class="send">
+                                                                        <i class="fa-solid fa-paper-plane"></i>
+                                                                    </button>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -241,65 +241,162 @@
 
                                             </div>
                                         </div>
+                                    </ItemTemplate>
+                                </asp:DataList>
                             </div>
-                            <!-- đổ thêm avata của người dùng(acc đa đăng nhập) -->
-                            </ItemTemplate>
-                            </asp:DataList>
-
-
                         </div>
-
                     </div>
 
                 </div>
             </div>
 
-        </div>
+            <!-- following -->
+            <div id="content2" class="menu-content" style="display:none;">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- datalist -->
+                        <div class="row m-0">
+                            <asp:Repeater ID="DS_FOLLOWING" runat="server">
+                                <ItemTemplate>
+                                    <div class="col-lg-6">
+                                        <div class="cardTongCnt2 card">
+                                            <div class="row d-flex m-0">
+                                                <div class="colAvaCnt2">
+                                                    <asp:ImageButton ID="Image3" runat="server"
+                                                        AlternateText='<%# Eval("IDKHACHHANG") %>'
+                                                        ImageUrl='<%# "images/AVT_DAIDIEN/"+Eval("AVTDAIDIEN") %>'
+                                                        CssClass="avaCnt2" />
+                                                </div>
+                                                <div class="colContentCnt2">
+                                                    <div class="card m-0">
+                                                        <div class="card-header">
+                                                            <asp:LinkButton ID="LinkButton1" runat="server"
+                                                                CommandArgument='<%# Eval("IDKHACHHANG") %>'
+                                                                OnClick="LinkButton1_Click"
+                                                                Text='<%# Eval("TENDANGNHAP") %>' CssClass="name">
+                                                            </asp:LinkButton>
+
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <asp:Label ID="lbnumberflw" runat="server"
+                                                                Text='<%# Eval("SLFL") %>'>
+                                                            </asp:Label>
+                                                            <label> Follower</label>
+                                                        </div>
+                                                        <div
+                                                            class="card-footer d-flex align-items-center justify-content-around">
+                                                            <asp:Button ID="btnchatting" runat="server" Text="Chatting"
+                                                                CssClass="btnCnt2 me-3" />
+
+                                                            <asp:Button ID="btnfollowing" runat="server"
+                                                                Text="Following" CssClass="btnCnt2" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </ItemTemplate>
+                            </asp:Repeater>
+                        </div>
+                    </div>
+
+                </div>
+
+                DS_FOLLOWER
 
 
 
 
- <div id="content2" class="menu-content" style="display:none;">
-     <%--datalist--%>
-     <asp:DataList ID="DS_FOLLOWING" runat="server" RepeatColumns="2">
-                         <ItemTemplate>
-                             <asp:Image ID="Image3" runat="server" AlternateText='<%# Eval("IDKHACHHANG") %>' ImageUrl='<%# "AVT_DAIDIEN/"+Eval("AVTDAIDIEN") %>' Height="200px" />
-                             &nbsp;<asp:LinkButton ID="LinkButton1" runat="server" CommandArgument='<%# Eval("IDKHACHHANG") %>' OnClick="LinkButton1_Click" Text='<%# Eval("TENDANGNHAP") %>'></asp:LinkButton>
-                             <br />
-                             <asp:Label ID="lbnumberflw" runat="server" Text='<%# Eval("SLFL") %>'></asp:Label>
-                             <br />
-                             <asp:Button ID="btnchatting" runat="server" Text="Chatting" />
-                             &nbsp;
-                             <asp:Button ID="btnfollowing" runat="server" Text="Following" />
-                         </ItemTemplate>
-             </asp:DataList>
- </div>
-
-  <div id="content3" class="menu-content" style="display:none;">
-      <%--datalist--%>
-         <asp:DataList ID="DS_FOLLOWER" runat="server" RepeatColumns="2">
-                <ItemTemplate>
-                    <asp:Image ID="Image3" runat="server" AlternateText='<%# Eval("IDKHACHHANG") %>' ImageUrl='<%# "AVT_DAIDIEN/"+Eval("AVTDAIDIEN") %>' Height="200px" />
-                    &nbsp;<asp:LinkButton ID="LinkButton1" runat="server" CommandArgument='<%# Eval("IDKHACHHANG") %>' OnClick="LinkButton1_Click" Text='<%# Eval("TENDANGNHAP") %>'></asp:LinkButton>
-                    <br />
-                    <asp:Label ID="lbnumberflw" runat="server" Text='<%# Eval("SLFL") %>'></asp:Label>
-                    <br />
-                    <asp:Button ID="btnchatting" runat="server" Text="Chatting" />
-                    &nbsp;
-                    <asp:Button ID="btnfollowing" runat="server" Text="Following" />
-                </ItemTemplate>
-    </asp:DataList>
-  </div>
-        
-  <br />
-  <br />
-            <div id="content4" class="menu-content" style="display:none;">
-                <h3>Nội dung Submenu 4</h3>
-                <p>Đây là nội dung cho Submenu 4.</p>
             </div>
 
+            <!-- follower -->
+            <div id="content3" class="menu-content" style="display:none;">
+                <!-- datalist -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- datalist -->
+                        <div class="row m-0">
+                            <asp:Repeater ID="DS_FOLLOWER" runat="server">
+                                <ItemTemplate>
+                                    <div class="col-lg-6">
+                                        <div class="cardTongCnt2 card">
+                                            <div class="row d-flex m-0">
+                                                <div class="colAvaCnt2">
+
+                                                    <asp:ImageButton ID="Image3" runat="server"
+                                                        AlternateText='<%# Eval("IDKHACHHANG") %>'
+                                                        ImageUrl='<%# "images/AVT_DAIDIEN/"+Eval("AVTDAIDIEN") %>'
+                                                        CssClass="avaCnt2" />
+                                                </div>
+                                                <div class="colContentCnt2">
+                                                    <div class="card m-0">
+                                                        <div class="card-header">
+                                                            <asp:LinkButton ID="LinkButton1" runat="server"
+                                                                CommandArgument='<%# Eval("IDKHACHHANG") %>'
+                                                                OnClick="LinkButton1_Click"
+                                                                Text='<%# Eval("TENDANGNHAP") %>' CssClass="name">
+                                                            </asp:LinkButton>
+
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <asp:Label ID="lbnumberflw" runat="server"
+                                                                Text='<%# Eval("SLFL") %>'>
+                                                            </asp:Label>
+                                                            <label> Follower</label>
+                                                        </div>
+                                                        <div
+                                                            class="card-footer d-flex align-items-center justify-content-around">
+                                                            <asp:Button ID="btnchatting" runat="server" Text="Chatting"
+                                                                CssClass="btnCnt2 me-3" />
+
+                                                            <asp:Button ID="btnfollowing" runat="server" Text="Follower"
+                                                                CssClass="btnCnt2" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </ItemTemplate>
+                            </asp:Repeater>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- edit profile -->
+            <div id="content4" class="menu-content" style="display:none;">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card p-3">
+                            <button class="text-start p-2">
+                                <span class="">Update Personal Information</span>
+                            </button>
+
+
+
+                            <button class="text-start p-2">
+                                <span class="">Security and Privacy Settings</span>
+                            </button>
+                            <button class="text-start p-2">
+                                <span class="">Edit Contact Information</span>
+                            </button>
+                            <!-- <div class="other-section">Security and Privacy Settings</div>
+                            <div class="other-section">Edit Contact Information</div> -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
         </div>
-        </div>
+
+
 
 
 

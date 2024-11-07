@@ -15,12 +15,13 @@ namespace WebApplication1
         protected void Page_Load(object sender, EventArgs e)
         {
             if (IsPostBack) return;
-            String SQL = "Select * from BAIDANG,KHACHHANG";
+            String SQL = "Select * from BAIDANG";
+            String sql = "Select * from KHACHHANG";
             DSBAIDANG.DataSource = kn.LayDuLieu(SQL);
             DSBAIDANG.DataBind();
-            DS_FOLLOWING.DataSource = kn.LayDuLieu(SQL);
+            DS_FOLLOWING.DataSource = kn.LayDuLieu(sql);
             DS_FOLLOWING.DataBind();
-            DS_FOLLOWER.DataSource = kn.LayDuLieu(SQL);
+            DS_FOLLOWER.DataSource = kn.LayDuLieu(sql);
             DS_FOLLOWER.DataBind();
 
         }

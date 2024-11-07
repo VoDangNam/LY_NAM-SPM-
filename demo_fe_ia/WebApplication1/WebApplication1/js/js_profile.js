@@ -25,6 +25,17 @@ function toggleColor() {
     button.classList.toggle("active");
 }
 
+// dropdown của edit profile
+// function toggleDropdown() {
+//     var content = document.getElementById("dropdown-header");
+//     if (content.style.display === "block") {
+//         content.style.display = "none";
+//     } else {
+//         content.style.display = "block";
+//     }
+// }
+
+
 
 
 
