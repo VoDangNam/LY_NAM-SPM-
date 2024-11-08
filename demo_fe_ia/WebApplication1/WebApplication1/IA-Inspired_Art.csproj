@@ -78,6 +78,7 @@
     <Content Include="App_Data\Database1_log.ldf">
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
+    <Content Include="css\css_userControlLogin.css" />
     <Content Include="images\AVT_DAIDIEN\hinhavt1.jpg" />
     <Content Include="images\AVT_DAIDIEN\hinhavt2.jpg" />
     <Content Include="images\AVT_DAIDIEN\hinhavt3.jpg" />
@@ -134,6 +135,7 @@
     <Content Include="Login.aspx" />
     <Content Include="Melody.aspx" />
     <Content Include="MelodyDetails.aspx" />
+    <Content Include="menuLogin.ascx" />
     <Content Include="Notification.aspx" />
     <Content Include="OrderDetails.aspx" />
     <Content Include="PhotoDetails.aspx" />
@@ -214,6 +216,13 @@
     </Compile>
     <Compile Include="MelodyDetails.aspx.designer.cs">
       <DependentUpon>MelodyDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="menuLogin.ascx.cs">
+      <DependentUpon>menuLogin.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="menuLogin.ascx.designer.cs">
+      <DependentUpon>menuLogin.ascx</DependentUpon>
     </Compile>
     <Compile Include="Models\KhachHang.cs" />
     <Compile Include="Models\KhachHangDbContext.cs" />

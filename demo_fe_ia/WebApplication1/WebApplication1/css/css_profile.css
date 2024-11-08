@@ -404,8 +404,44 @@
 
 #content4 .card {
     border: none;
-    height: auto;
+    /* height: auto; */
     box-shadow: 0 5px 10px #6305D3;
     border-radius: 10px;
-    margin-bottom: 20px;
+    padding: 25px;
+
+}
+
+#content4 .content-edit-profile {
+    padding: 20px;
+    background-color: transparent;
+    margin: 10px 0;
+}
+
+#content4 .content-edit-profile:hover {
+    /* padding: 5px 20px; */
+    background-color: #f2e8ff;
+}
+
+#content4 .line {
+    border: none;
+    background-color: #6305D3;
+    /* font-weight: 700; */
+    height: 2px;
+    margin: 0;
+}
+
+.custom-upload-button {
+    padding: 3px 20px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: inherit;
+    color: #6305D3;
+    background-color: #fff;
+    border: 2px solid #6305D3;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.custom-upload-button:hover {
+    background-color: #f2e8ff;
 }

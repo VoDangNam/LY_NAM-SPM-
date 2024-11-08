@@ -178,8 +178,10 @@
                                                                                         <i
                                                                                             class="fa-solid fa-heart"></i>
                                                                                     </button>
-                                                                                    <!-- button comment -->
-                                                                                    <button type="button">
+                                                                                    <!-- button comment - modal -->
+                                                                                    <button type="button"
+                                                                                        data-bs-toggle="modal"
+                                                                                        data-bs-target="#commentModal">
                                                                                         <i
                                                                                             class="fa-regular fa-comment"></i>
 
@@ -372,31 +374,83 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card p-3">
-                            <button class="text-start p-2">
+                            <div class="content-edit-profile text-start" data-bs-toggle="modal"
+                                data-bs-target="#updataModal">
                                 <span class="">Update Personal Information</span>
-                            </button>
+                            </div>
+                            <hr class="line">
 
+                            <div
+                                class="content-edit-profile text-start d-flex justify-content-between align-items-center">
+                                <span class="">Change Profile Picture</span>
+                                <div class="">
+                                    <label for="fileUploadAvata" class="custom-upload-button">Choose File</label>
+                                    <input id="fileUploadAvata" type="file" style="display: none;">
+                                </div>
+                            </div>
+                            <hr class="line">
 
+                            <div
+                                class="content-edit-profile text-start d-flex justify-content-between align-items-center">
+                                <span class="">Change Cover Photo</span>
+                                <div class="">
+                                    <label for="fileUploadCover" class="custom-upload-button">Choose File</label>
+                                    <input id="fileUploadCover" type="file" style="display: none;">
+                                </div>
+                            </div>
+                            <hr class="line">
 
-                            <button class="text-start p-2">
+                            <div class="content-edit-profile text-start">
                                 <span class="">Security and Privacy Settings</span>
-                            </button>
-                            <button class="text-start p-2">
+                            </div>
+                            <hr class="line ">
+
+                            <div class="content-edit-profile text-start">
                                 <span class="">Edit Contact Information</span>
-                            </button>
-                            <!-- <div class="other-section">Security and Privacy Settings</div>
-                            <div class="other-section">Edit Contact Information</div> -->
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </div>
-
-
-
         </div>
 
+        <!-- Post - Comment Modal -->
+        <div class="modal fade" id="commentModal" tabindex="-1" aria-labelledby="commentModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="commentModalLabel">Modal title</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <!-- Edit profile - Update Personal Information Modal -->
+        <div class="modal fade" id="updataModal" tabindex="-1" aria-labelledby="updataModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="updataModalLabel">Modal title</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
 
